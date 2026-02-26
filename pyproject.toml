@@ -1,0 +1,27 @@
+[project]
+name = "aces"
+version = "0.1.0"
+description = "Adversarial Co-Evolution Simulator for cybersecurity defense research"
+requires-python = ">=3.11"
+dependencies = [
+    "deap>=1.4.1",
+    "networkx>=3.2",
+    "matplotlib>=3.8",
+    "plotly>=5.18",
+    "rich>=13.7",
+    "pydantic>=2.5",
+]
+
+[project.optional-dependencies]
+narration = ["anthropic>=0.40"]
+dev = ["pytest>=7.4", "pytest-cov>=4.1"]
+
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["aces*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

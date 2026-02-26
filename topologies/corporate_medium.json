@@ -1,0 +1,2631 @@
+{
+  "hosts": [
+    {
+      "id": "dmz-web-01",
+      "hostname": "web-server",
+      "os": "ubuntu_22",
+      "role": "server",
+      "criticality": 0.3,
+      "services": [
+        {
+          "name": "http",
+          "port": 80,
+          "version": "nginx/1.24",
+          "exposed": true
+        },
+        {
+          "name": "https",
+          "port": 443,
+          "version": "nginx/1.24",
+          "exposed": true
+        },
+        {
+          "name": "ssh",
+          "port": 22,
+          "version": "8.9",
+          "exposed": false
+        }
+      ],
+      "vulnerabilities": [
+        {
+          "cve_id": "CVE-2023-44487",
+          "cvss_score": 7.5,
+          "technique_enables": "T1190",
+          "exploited": false
+        }
+      ],
+      "installed_software": [],
+      "is_compromised": false,
+      "privilege_level": "none",
+      "has_credential_cache": false,
+      "segment": "dmz",
+      "high_value_data": false,
+      "data_staged": false
+    },
+    {
+      "id": "dmz-mail-01",
+      "hostname": "mail-server",
+      "os": "ubuntu_22",
+      "role": "server",
+      "criticality": 0.3,
+      "services": [
+        {
+          "name": "smtp",
+          "port": 25,
+          "version": "postfix/3.7",
+          "exposed": true
+        },
+        {
+          "name": "imap",
+          "port": 993,
+          "version": "dovecot/2.3",
+          "exposed": true
+        },
+        {
+          "name": "ssh",
+          "port": 22,
+          "version": "8.9",
+          "exposed": false
+        }
+      ],
+      "vulnerabilities": [],
+      "installed_software": [],
+      "is_compromised": false,
+      "privilege_level": "none",
+      "has_credential_cache": false,
+      "segment": "dmz",
+      "high_value_data": false,
+      "data_staged": false
+    },
+    {
+      "id": "dmz-vpn-01",
+      "hostname": "vpn-gateway",
+      "os": "rhel_8",
+      "role": "server",
+      "criticality": 0.3,
+      "services": [
+        {
+          "name": "vpn",
+          "port": 1194,
+          "version": "openvpn/2.6",
+          "exposed": true
+        },
+        {
+          "name": "ssh",
+          "port": 22,
+          "version": "8.2",
+          "exposed": false
+        }
+      ],
+      "vulnerabilities": [],
+      "installed_software": [],
+      "is_compromised": false,
+      "privilege_level": "none",
+      "has_credential_cache": false,
+      "segment": "dmz",
+      "high_value_data": false,
+      "data_staged": false
+    },
+    {
+      "id": "usr-ws-01",
+      "hostname": "user-ws-1",
+      "os": "windows_10",
+      "role": "workstation",
+      "criticality": 0.15,
+      "services": [
+        {
+          "name": "smb",
+          "port": 445,
+          "version": "3.1.1",
+          "exposed": false
+        },
+        {
+          "name": "rdp",
+          "port": 3389,
+          "version": "10.0",
+          "exposed": false
+        }
+      ],
+      "vulnerabilities": [],
+      "installed_software": [
+        "office",
+        "browser",
+        "email_client"
+      ],
+      "is_compromised": false,
+      "privilege_level": "none",
+      "has_credential_cache": true,
+      "segment": "user",
+      "high_value_data": false,
+      "data_staged": false
+    },
+    {
+      "id": "usr-ws-02",
+      "hostname": "user-ws-2",
+      "os": "windows_10",
+      "role": "workstation",
+      "criticality": 0.15,
+      "services": [
+        {
+          "name": "smb",
+          "port": 445,
+          "version": "3.1.1",
+          "exposed": false
+        },
+        {
+          "name": "rdp",
+          "port": 3389,
+          "version": "10.0",
+          "exposed": false
+        }
+      ],
+      "vulnerabilities": [],
+      "installed_software": [
+        "office",
+        "browser",
+        "email_client"
+      ],
+      "is_compromised": false,
+      "privilege_level": "none",
+      "has_credential_cache": true,
+      "segment": "user",
+      "high_value_data": false,
+      "data_staged": false
+    },
+    {
+      "id": "usr-ws-03",
+      "hostname": "user-ws-3",
+      "os": "windows_10",
+      "role": "workstation",
+      "criticality": 0.15,
+      "services": [
+        {
+          "name": "smb",
+          "port": 445,
+          "version": "3.1.1",
+          "exposed": false
+        },
+        {
+          "name": "rdp",
+          "port": 3389,
+          "version": "10.0",
+          "exposed": false
+        }
+      ],
+      "vulnerabilities": [
+        {
+          "cve_id": "CVE-2023-28683",
+          "cvss_score": 7.8,
+          "technique_enables": "T1068",
+          "exploited": false
+        }
+      ],
+      "installed_software": [
+        "office",
+        "browser",
+        "email_client"
+      ],
+      "is_compromised": false,
+      "privilege_level": "none",
+      "has_credential_cache": true,
+      "segment": "user",
+      "high_value_data": false,
+      "data_staged": false
+    },
+    {
+      "id": "usr-ws-04",
+      "hostname": "user-ws-4",
+      "os": "windows_10",
+      "role": "workstation",
+      "criticality": 0.15,
+      "services": [
+        {
+          "name": "smb",
+          "port": 445,
+          "version": "3.1.1",
+          "exposed": false
+        },
+        {
+          "name": "rdp",
+          "port": 3389,
+          "version": "10.0",
+          "exposed": false
+        }
+      ],
+      "vulnerabilities": [],
+      "installed_software": [
+        "office",
+        "browser",
+        "email_client"
+      ],
+      "is_compromised": false,
+      "privilege_level": "none",
+      "has_credential_cache": true,
+      "segment": "user",
+      "high_value_data": false,
+      "data_staged": false
+    },
+    {
+      "id": "usr-ws-05",
+      "hostname": "user-ws-5",
+      "os": "windows_10",
+      "role": "workstation",
+      "criticality": 0.15,
+      "services": [
+        {
+          "name": "smb",
+          "port": 445,
+          "version": "3.1.1",
+          "exposed": false
+        },
+        {
+          "name": "rdp",
+          "port": 3389,
+          "version": "10.0",
+          "exposed": false
+        }
+      ],
+      "vulnerabilities": [],
+      "installed_software": [
+        "office",
+        "browser",
+        "email_client"
+      ],
+      "is_compromised": false,
+      "privilege_level": "none",
+      "has_credential_cache": true,
+      "segment": "user",
+      "high_value_data": false,
+      "data_staged": false
+    },
+    {
+      "id": "usr-ws-06",
+      "hostname": "user-ws-6",
+      "os": "windows_10",
+      "role": "workstation",
+      "criticality": 0.15,
+      "services": [
+        {
+          "name": "smb",
+          "port": 445,
+          "version": "3.1.1",
+          "exposed": false
+        },
+        {
+          "name": "rdp",
+          "port": 3389,
+          "version": "10.0",
+          "exposed": false
+        }
+      ],
+      "vulnerabilities": [
+        {
+          "cve_id": "CVE-2023-28686",
+          "cvss_score": 7.8,
+          "technique_enables": "T1068",
+          "exploited": false
+        }
+      ],
+      "installed_software": [
+        "office",
+        "browser",
+        "email_client"
+      ],
+      "is_compromised": false,
+      "privilege_level": "none",
+      "has_credential_cache": true,
+      "segment": "user",
+      "high_value_data": false,
+      "data_staged": false
+    },
+    {
+      "id": "usr-ws-07",
+      "hostname": "user-ws-7",
+      "os": "windows_10",
+      "role": "workstation",
+      "criticality": 0.15,
+      "services": [
+        {
+          "name": "smb",
+          "port": 445,
+          "version": "3.1.1",
+          "exposed": false
+        },
+        {
+          "name": "rdp",
+          "port": 3389,
+          "version": "10.0",
+          "exposed": false
+        }
+      ],
+      "vulnerabilities": [],
+      "installed_software": [
+        "office",
+        "browser",
+        "email_client"
+      ],
+      "is_compromised": false,
+      "privilege_level": "none",
+      "has_credential_cache": true,
+      "segment": "user",
+      "high_value_data": false,
+      "data_staged": false
+    },
+    {
+      "id": "usr-ws-08",
+      "hostname": "user-ws-8",
+      "os": "windows_10",
+      "role": "workstation",
+      "criticality": 0.15,
+      "services": [
+        {
+          "name": "smb",
+          "port": 445,
+          "version": "3.1.1",
+          "exposed": false
+        },
+        {
+          "name": "rdp",
+          "port": 3389,
+          "version": "10.0",
+          "exposed": false
+        }
+      ],
+      "vulnerabilities": [],
+      "installed_software": [
+        "office",
+        "browser",
+        "email_client"
+      ],
+      "is_compromised": false,
+      "privilege_level": "none",
+      "has_credential_cache": true,
+      "segment": "user",
+      "high_value_data": false,
+      "data_staged": false
+    },
+    {
+      "id": "it-ws-01",
+      "hostname": "it-admin-ws-1",
+      "os": "windows_10",
+      "role": "workstation",
+      "criticality": 0.4,
+      "services": [
+        {
+          "name": "smb",
+          "port": 445,
+          "version": "3.1.1",
+          "exposed": false
+        },
+        {
+          "name": "rdp",
+          "port": 3389,
+          "version": "10.0",
+          "exposed": false
+        }
+      ],
+      "vulnerabilities": [],
+      "installed_software": [
+        "office",
+        "browser",
+        "email_client"
+      ],
+      "is_compromised": false,
+      "privilege_level": "none",
+      "has_credential_cache": true,
+      "segment": "it",
+      "high_value_data": false,
+      "data_staged": false
+    },
+    {
+      "id": "it-ws-02",
+      "hostname": "it-admin-ws-2",
+      "os": "windows_10",
+      "role": "workstation",
+      "criticality": 0.4,
+      "services": [
+        {
+          "name": "smb",
+          "port": 445,
+          "version": "3.1.1",
+          "exposed": false
+        },
+        {
+          "name": "rdp",
+          "port": 3389,
+          "version": "10.0",
+          "exposed": false
+        }
+      ],
+      "vulnerabilities": [],
+      "installed_software": [
+        "office",
+        "browser",
+        "email_client"
+      ],
+      "is_compromised": false,
+      "privilege_level": "none",
+      "has_credential_cache": true,
+      "segment": "it",
+      "high_value_data": false,
+      "data_staged": false
+    },
+    {
+      "id": "it-ws-03",
+      "hostname": "it-admin-ws-3",
+      "os": "windows_10",
+      "role": "workstation",
+      "criticality": 0.4,
+      "services": [
+        {
+          "name": "smb",
+          "port": 445,
+          "version": "3.1.1",
+          "exposed": false
+        },
+        {
+          "name": "rdp",
+          "port": 3389,
+          "version": "10.0",
+          "exposed": false
+        }
+      ],
+      "vulnerabilities": [],
+      "installed_software": [
+        "office",
+        "browser",
+        "email_client"
+      ],
+      "is_compromised": false,
+      "privilege_level": "none",
+      "has_credential_cache": true,
+      "segment": "it",
+      "high_value_data": false,
+      "data_staged": false
+    },
+    {
+      "id": "srv-dc-01",
+      "hostname": "corp-dc-01",
+      "os": "windows_server_2019",
+      "role": "domain_controller",
+      "criticality": 1.0,
+      "services": [
+        {
+          "name": "ldap",
+          "port": 389,
+          "version": "",
+          "exposed": false
+        },
+        {
+          "name": "kerberos",
+          "port": 88,
+          "version": "",
+          "exposed": false
+        },
+        {
+          "name": "smb",
+          "port": 445,
+          "version": "3.1.1",
+          "exposed": false
+        },
+        {
+          "name": "dns",
+          "port": 53,
+          "version": "",
+          "exposed": false
+        },
+        {
+          "name": "rdp",
+          "port": 3389,
+          "version": "10.0",
+          "exposed": false
+        }
+      ],
+      "vulnerabilities": [],
+      "installed_software": [],
+      "is_compromised": false,
+      "privilege_level": "none",
+      "has_credential_cache": true,
+      "segment": "server",
+      "high_value_data": true,
+      "data_staged": false
+    },
+    {
+      "id": "srv-file-01",
+      "hostname": "file-server",
+      "os": "windows_server_2019",
+      "role": "server",
+      "criticality": 0.5,
+      "services": [
+        {
+          "name": "smb",
+          "port": 445,
+          "version": "3.1.1",
+          "exposed": false
+        },
+        {
+          "name": "rdp",
+          "port": 3389,
+          "version": "10.0",
+          "exposed": false
+        }
+      ],
+      "vulnerabilities": [],
+      "installed_software": [],
+      "is_compromised": false,
+      "privilege_level": "none",
+      "has_credential_cache": true,
+      "segment": "server",
+      "high_value_data": false,
+      "data_staged": false
+    },
+    {
+      "id": "srv-app-01",
+      "hostname": "app-server",
+      "os": "windows_server_2019",
+      "role": "server",
+      "criticality": 0.6,
+      "services": [
+        {
+          "name": "http",
+          "port": 8080,
+          "version": "tomcat/10.1",
+          "exposed": false
+        },
+        {
+          "name": "smb",
+          "port": 445,
+          "version": "3.1.1",
+          "exposed": false
+        },
+        {
+          "name": "rdp",
+          "port": 3389,
+          "version": "10.0",
+          "exposed": false
+        }
+      ],
+      "vulnerabilities": [
+        {
+          "cve_id": "CVE-2024-1001",
+          "cvss_score": 8.1,
+          "technique_enables": "T1210",
+          "exploited": false
+        }
+      ],
+      "installed_software": [],
+      "is_compromised": false,
+      "privilege_level": "none",
+      "has_credential_cache": true,
+      "segment": "server",
+      "high_value_data": false,
+      "data_staged": false
+    },
+    {
+      "id": "srv-db-01",
+      "hostname": "database-server",
+      "os": "windows_server_2019",
+      "role": "database",
+      "criticality": 0.9,
+      "services": [
+        {
+          "name": "sql",
+          "port": 1433,
+          "version": "2019",
+          "exposed": false
+        },
+        {
+          "name": "smb",
+          "port": 445,
+          "version": "3.1.1",
+          "exposed": false
+        },
+        {
+          "name": "rdp",
+          "port": 3389,
+          "version": "10.0",
+          "exposed": false
+        }
+      ],
+      "vulnerabilities": [],
+      "installed_software": [],
+      "is_compromised": false,
+      "privilege_level": "none",
+      "has_credential_cache": true,
+      "segment": "server",
+      "high_value_data": true,
+      "data_staged": false
+    },
+    {
+      "id": "srv-backup-01",
+      "hostname": "backup-server",
+      "os": "ubuntu_22",
+      "role": "server",
+      "criticality": 0.9,
+      "services": [
+        {
+          "name": "ssh",
+          "port": 22,
+          "version": "8.9",
+          "exposed": false
+        },
+        {
+          "name": "smb",
+          "port": 445,
+          "version": "4.18",
+          "exposed": false
+        }
+      ],
+      "vulnerabilities": [],
+      "installed_software": [],
+      "is_compromised": false,
+      "privilege_level": "none",
+      "has_credential_cache": true,
+      "segment": "server",
+      "high_value_data": false,
+      "data_staged": false
+    },
+    {
+      "id": "rst-exec-01",
+      "hostname": "exec-ws-1",
+      "os": "windows_10",
+      "role": "workstation",
+      "criticality": 0.6,
+      "services": [
+        {
+          "name": "smb",
+          "port": 445,
+          "version": "3.1.1",
+          "exposed": false
+        },
+        {
+          "name": "rdp",
+          "port": 3389,
+          "version": "10.0",
+          "exposed": false
+        }
+      ],
+      "vulnerabilities": [],
+      "installed_software": [
+        "office",
+        "browser",
+        "email_client"
+      ],
+      "is_compromised": false,
+      "privilege_level": "none",
+      "has_credential_cache": true,
+      "segment": "restricted",
+      "high_value_data": false,
+      "data_staged": false
+    },
+    {
+      "id": "rst-exec-02",
+      "hostname": "exec-ws-2",
+      "os": "windows_10",
+      "role": "workstation",
+      "criticality": 0.6,
+      "services": [
+        {
+          "name": "smb",
+          "port": 445,
+          "version": "3.1.1",
+          "exposed": false
+        },
+        {
+          "name": "rdp",
+          "port": 3389,
+          "version": "10.0",
+          "exposed": false
+        }
+      ],
+      "vulnerabilities": [],
+      "installed_software": [
+        "office",
+        "browser",
+        "email_client"
+      ],
+      "is_compromised": false,
+      "privilege_level": "none",
+      "has_credential_cache": true,
+      "segment": "restricted",
+      "high_value_data": false,
+      "data_staged": false
+    },
+    {
+      "id": "rst-hr-01",
+      "hostname": "hr-server",
+      "os": "windows_server_2019",
+      "role": "server",
+      "criticality": 0.95,
+      "services": [
+        {
+          "name": "http",
+          "port": 443,
+          "version": "iis/10.0",
+          "exposed": false
+        },
+        {
+          "name": "smb",
+          "port": 445,
+          "version": "3.1.1",
+          "exposed": false
+        },
+        {
+          "name": "rdp",
+          "port": 3389,
+          "version": "10.0",
+          "exposed": false
+        }
+      ],
+      "vulnerabilities": [],
+      "installed_software": [],
+      "is_compromised": false,
+      "privilege_level": "none",
+      "has_credential_cache": true,
+      "segment": "restricted",
+      "high_value_data": true,
+      "data_staged": false
+    },
+    {
+      "id": "external",
+      "hostname": "internet",
+      "os": "ubuntu_22",
+      "role": "server",
+      "criticality": 0.0,
+      "services": [],
+      "vulnerabilities": [],
+      "installed_software": [],
+      "is_compromised": false,
+      "privilege_level": "none",
+      "has_credential_cache": false,
+      "segment": "external",
+      "high_value_data": false,
+      "data_staged": false
+    }
+  ],
+  "edges": [
+    {
+      "source": "dmz-web-01",
+      "target": "usr-ws-01",
+      "protocols": [
+        "http"
+      ],
+      "requires_credential": false
+    },
+    {
+      "source": "dmz-vpn-01",
+      "target": "it-ws-01",
+      "protocols": [
+        "rdp",
+        "ssh"
+      ],
+      "requires_credential": false
+    },
+    {
+      "source": "usr-ws-01",
+      "target": "srv-file-01",
+      "protocols": [
+        "smb"
+      ],
+      "requires_credential": false
+    },
+    {
+      "source": "usr-ws-01",
+      "target": "srv-app-01",
+      "protocols": [
+        "http"
+      ],
+      "requires_credential": false
+    },
+    {
+      "source": "usr-ws-01",
+      "target": "srv-dc-01",
+      "protocols": [
+        "ldap",
+        "kerberos"
+      ],
+      "requires_credential": false
+    },
+    {
+      "source": "usr-ws-01",
+      "target": "usr-ws-02",
+      "protocols": [
+        "smb"
+      ],
+      "requires_credential": false
+    },
+    {
+      "source": "usr-ws-01",
+      "target": "usr-ws-03",
+      "protocols": [
+        "smb"
+      ],
+      "requires_credential": false
+    },
+    {
+      "source": "usr-ws-01",
+      "target": "usr-ws-04",
+      "protocols": [
+        "smb"
+      ],
+      "requires_credential": false
+    },
+    {
+      "source": "usr-ws-01",
+      "target": "usr-ws-05",
+      "protocols": [
+        "smb"
+      ],
+      "requires_credential": false
+    },
+    {
+      "source": "usr-ws-01",
+      "target": "usr-ws-06",
+      "protocols": [
+        "smb"
+      ],
+      "requires_credential": false
+    },
+    {
+      "source": "usr-ws-01",
+      "target": "usr-ws-07",
+      "protocols": [
+        "smb"
+      ],
+      "requires_credential": false
+    },
+    {
+      "source": "usr-ws-01",
+      "target": "usr-ws-08",
+      "protocols": [
+        "smb"
+      ],
+      "requires_credential": false
+    },
+    {
+      "source": "usr-ws-02",
+      "target": "srv-file-01",
+      "protocols": [
+        "smb"
+      ],
+      "requires_credential": false
+    },
+    {
+      "source": "usr-ws-02",
+      "target": "srv-app-01",
+      "protocols": [
+        "http"
+      ],
+      "requires_credential": false
+    },
+    {
+      "source": "usr-ws-02",
+      "target": "srv-dc-01",
+      "protocols": [
+        "ldap",
+        "kerberos"
+      ],
+      "requires_credential": false
+    },
+    {
+      "source": "usr-ws-02",
+      "target": "usr-ws-01",
+      "protocols": [
+        "smb"
+      ],
+      "requires_credential": false
+    },
+    {
+      "source": "usr-ws-02",
+      "target": "usr-ws-03",
+      "protocols": [
+        "smb"
+      ],
+      "requires_credential": false
+    },
+    {
+      "source": "usr-ws-02",
+      "target": "usr-ws-04",
+      "protocols": [
+        "smb"
+      ],
+      "requires_credential": false
+    },
+    {
+      "source": "usr-ws-02",
+      "target": "usr-ws-05",
+      "protocols": [
+        "smb"
+      ],
+      "requires_credential": false
+    },
+    {
+      "source": "usr-ws-02",
+      "target": "usr-ws-06",
+      "protocols": [
+        "smb"
+      ],
+      "requires_credential": false
+    },
+    {
+      "source": "usr-ws-02",
+      "target": "usr-ws-07",
+      "protocols": [
+        "smb"
+      ],
+      "requires_credential": false
+    },
+    {
+      "source": "usr-ws-02",
+      "target": "usr-ws-08",
+      "protocols": [
+        "smb"
+      ],
+      "requires_credential": false
+    },
+    {
+      "source": "usr-ws-03",
+      "target": "srv-file-01",
+      "protocols": [
+        "smb"
+      ],
+      "requires_credential": false
+    },
+    {
+      "source": "usr-ws-03",
+      "target": "srv-app-01",
+      "protocols": [
+        "http"
+      ],
+      "requires_credential": false
+    },
+    {
+      "source": "usr-ws-03",
+      "target": "srv-dc-01",
+      "protocols": [
+        "ldap",
+        "kerberos"
+      ],
+      "requires_credential": false
+    },
+    {
+      "source": "usr-ws-03",
+      "target": "usr-ws-01",
+      "protocols": [
+        "smb"
+      ],
+      "requires_credential": false
+    },
+    {
+      "source": "usr-ws-03",
+      "target": "usr-ws-02",
+      "protocols": [
+        "smb"
+      ],
+      "requires_credential": false
+    },
+    {
+      "source": "usr-ws-03",
+      "target": "usr-ws-04",
+      "protocols": [
+        "smb"
+      ],
+      "requires_credential": false
+    },
+    {
+      "source": "usr-ws-03",
+      "target": "usr-ws-05",
+      "protocols": [
+        "smb"
+      ],
+      "requires_credential": false
+    },
+    {
+      "source": "usr-ws-03",
+      "target": "usr-ws-06",
+      "protocols": [
+        "smb"
+      ],
+      "requires_credential": false
+    },
+    {
+      "source": "usr-ws-03",
+      "target": "usr-ws-07",
+      "protocols": [
+        "smb"
+      ],
+      "requires_credential": false
+    },
+    {
+      "source": "usr-ws-03",
+      "target": "usr-ws-08",
+      "protocols": [
+        "smb"
+      ],
+      "requires_credential": false
+    },
+    {
+      "source": "usr-ws-04",
+      "target": "srv-file-01",
+      "protocols": [
+        "smb"
+      ],
+      "requires_credential": false
+    },
+    {
+      "source": "usr-ws-04",
+      "target": "srv-app-01",
+      "protocols": [
+        "http"
+      ],
+      "requires_credential": false
+    },
+    {
+      "source": "usr-ws-04",
+      "target": "srv-dc-01",
+      "protocols": [
+        "ldap",
+        "kerberos"
+      ],
+      "requires_credential": false
+    },
+    {
+      "source": "usr-ws-04",
+      "target": "usr-ws-01",
+      "protocols": [
+        "smb"
+      ],
+      "requires_credential": false
+    },
+    {
+      "source": "usr-ws-04",
+      "target": "usr-ws-02",
+      "protocols": [
+        "smb"
+      ],
+      "requires_credential": false
+    },
+    {
+      "source": "usr-ws-04",
+      "target": "usr-ws-03",
+      "protocols": [
+        "smb"
+      ],
+      "requires_credential": false
+    },
+    {
+      "source": "usr-ws-04",
+      "target": "usr-ws-05",
+      "protocols": [
+        "smb"
+      ],
+      "requires_credential": false
+    },
+    {
+      "source": "usr-ws-04",
+      "target": "usr-ws-06",
+      "protocols": [
+        "smb"
+      ],
+      "requires_credential": false
+    },
+    {
+      "source": "usr-ws-04",
+      "target": "usr-ws-07",
+      "protocols": [
+        "smb"
+      ],
+      "requires_credential": false
+    },
+    {
+      "source": "usr-ws-04",
+      "target": "usr-ws-08",
+      "protocols": [
+        "smb"
+      ],
+      "requires_credential": false
+    },
+    {
+      "source": "usr-ws-05",
+      "target": "srv-file-01",
+      "protocols": [
+        "smb"
+      ],
+      "requires_credential": false
+    },
+    {
+      "source": "usr-ws-05",
+      "target": "srv-app-01",
+      "protocols": [
+        "http"
+      ],
+      "requires_credential": false
+    },
+    {
+      "source": "usr-ws-05",
+      "target": "srv-dc-01",
+      "protocols": [
+        "ldap",
+        "kerberos"
+      ],
+      "requires_credential": false
+    },
+    {
+      "source": "usr-ws-05",
+      "target": "usr-ws-01",
+      "protocols": [
+        "smb"
+      ],
+      "requires_credential": false
+    },
+    {
+      "source": "usr-ws-05",
+      "target": "usr-ws-02",
+      "protocols": [
+        "smb"
+      ],
+      "requires_credential": false
+    },
+    {
+      "source": "usr-ws-05",
+      "target": "usr-ws-03",
+      "protocols": [
+        "smb"
+      ],
+      "requires_credential": false
+    },
+    {
+      "source": "usr-ws-05",
+      "target": "usr-ws-04",
+      "protocols": [
+        "smb"
+      ],
+      "requires_credential": false
+    },
+    {
+      "source": "usr-ws-05",
+      "target": "usr-ws-06",
+      "protocols": [
+        "smb"
+      ],
+      "requires_credential": false
+    },
+    {
+      "source": "usr-ws-05",
+      "target": "usr-ws-07",
+      "protocols": [
+        "smb"
+      ],
+      "requires_credential": false
+    },
+    {
+      "source": "usr-ws-05",
+      "target": "usr-ws-08",
+      "protocols": [
+        "smb"
+      ],
+      "requires_credential": false
+    },
+    {
+      "source": "usr-ws-06",
+      "target": "srv-file-01",
+      "protocols": [
+        "smb"
+      ],
+      "requires_credential": false
+    },
+    {
+      "source": "usr-ws-06",
+      "target": "srv-app-01",
+      "protocols": [
+        "http"
+      ],
+      "requires_credential": false
+    },
+    {
+      "source": "usr-ws-06",
+      "target": "srv-dc-01",
+      "protocols": [
+        "ldap",
+        "kerberos"
+      ],
+      "requires_credential": false
+    },
+    {
+      "source": "usr-ws-06",
+      "target": "usr-ws-01",
+      "protocols": [
+        "smb"
+      ],
+      "requires_credential": false
+    },
+    {
+      "source": "usr-ws-06",
+      "target": "usr-ws-02",
+      "protocols": [
+        "smb"
+      ],
+      "requires_credential": false
+    },
+    {
+      "source": "usr-ws-06",
+      "target": "usr-ws-03",
+      "protocols": [
+        "smb"
+      ],
+      "requires_credential": false
+    },
+    {
+      "source": "usr-ws-06",
+      "target": "usr-ws-04",
+      "protocols": [
+        "smb"
+      ],
+      "requires_credential": false
+    },
+    {
+      "source": "usr-ws-06",
+      "target": "usr-ws-05",
+      "protocols": [
+        "smb"
+      ],
+      "requires_credential": false
+    },
+    {
+      "source": "usr-ws-06",
+      "target": "usr-ws-07",
+      "protocols": [
+        "smb"
+      ],
+      "requires_credential": false
+    },
+    {
+      "source": "usr-ws-06",
+      "target": "usr-ws-08",
+      "protocols": [
+        "smb"
+      ],
+      "requires_credential": false
+    },
+    {
+      "source": "usr-ws-07",
+      "target": "srv-file-01",
+      "protocols": [
+        "smb"
+      ],
+      "requires_credential": false
+    },
+    {
+      "source": "usr-ws-07",
+      "target": "srv-app-01",
+      "protocols": [
+        "http"
+      ],
+      "requires_credential": false
+    },
+    {
+      "source": "usr-ws-07",
+      "target": "srv-dc-01",
+      "protocols": [
+        "ldap",
+        "kerberos"
+      ],
+      "requires_credential": false
+    },
+    {
+      "source": "usr-ws-07",
+      "target": "usr-ws-01",
+      "protocols": [
+        "smb"
+      ],
+      "requires_credential": false
+    },
+    {
+      "source": "usr-ws-07",
+      "target": "usr-ws-02",
+      "protocols": [
+        "smb"
+      ],
+      "requires_credential": false
+    },
+    {
+      "source": "usr-ws-07",
+      "target": "usr-ws-03",
+      "protocols": [
+        "smb"
+      ],
+      "requires_credential": false
+    },
+    {
+      "source": "usr-ws-07",
+      "target": "usr-ws-04",
+      "protocols": [
+        "smb"
+      ],
+      "requires_credential": false
+    },
+    {
+      "source": "usr-ws-07",
+      "target": "usr-ws-05",
+      "protocols": [
+        "smb"
+      ],
+      "requires_credential": false
+    },
+    {
+      "source": "usr-ws-07",
+      "target": "usr-ws-06",
+      "protocols": [
+        "smb"
+      ],
+      "requires_credential": false
+    },
+    {
+      "source": "usr-ws-07",
+      "target": "usr-ws-08",
+      "protocols": [
+        "smb"
+      ],
+      "requires_credential": false
+    },
+    {
+      "source": "usr-ws-08",
+      "target": "srv-file-01",
+      "protocols": [
+        "smb"
+      ],
+      "requires_credential": false
+    },
+    {
+      "source": "usr-ws-08",
+      "target": "srv-app-01",
+      "protocols": [
+        "http"
+      ],
+      "requires_credential": false
+    },
+    {
+      "source": "usr-ws-08",
+      "target": "srv-dc-01",
+      "protocols": [
+        "ldap",
+        "kerberos"
+      ],
+      "requires_credential": false
+    },
+    {
+      "source": "usr-ws-08",
+      "target": "usr-ws-01",
+      "protocols": [
+        "smb"
+      ],
+      "requires_credential": false
+    },
+    {
+      "source": "usr-ws-08",
+      "target": "usr-ws-02",
+      "protocols": [
+        "smb"
+      ],
+      "requires_credential": false
+    },
+    {
+      "source": "usr-ws-08",
+      "target": "usr-ws-03",
+      "protocols": [
+        "smb"
+      ],
+      "requires_credential": false
+    },
+    {
+      "source": "usr-ws-08",
+      "target": "usr-ws-04",
+      "protocols": [
+        "smb"
+      ],
+      "requires_credential": false
+    },
+    {
+      "source": "usr-ws-08",
+      "target": "usr-ws-05",
+      "protocols": [
+        "smb"
+      ],
+      "requires_credential": false
+    },
+    {
+      "source": "usr-ws-08",
+      "target": "usr-ws-06",
+      "protocols": [
+        "smb"
+      ],
+      "requires_credential": false
+    },
+    {
+      "source": "usr-ws-08",
+      "target": "usr-ws-07",
+      "protocols": [
+        "smb"
+      ],
+      "requires_credential": false
+    },
+    {
+      "source": "it-ws-01",
+      "target": "usr-ws-01",
+      "protocols": [
+        "rdp",
+        "ssh",
+        "smb"
+      ],
+      "requires_credential": false
+    },
+    {
+      "source": "it-ws-01",
+      "target": "usr-ws-02",
+      "protocols": [
+        "rdp",
+        "ssh",
+        "smb"
+      ],
+      "requires_credential": false
+    },
+    {
+      "source": "it-ws-01",
+      "target": "usr-ws-03",
+      "protocols": [
+        "rdp",
+        "ssh",
+        "smb"
+      ],
+      "requires_credential": false
+    },
+    {
+      "source": "it-ws-01",
+      "target": "usr-ws-04",
+      "protocols": [
+        "rdp",
+        "ssh",
+        "smb"
+      ],
+      "requires_credential": false
+    },
+    {
+      "source": "it-ws-01",
+      "target": "usr-ws-05",
+      "protocols": [
+        "rdp",
+        "ssh",
+        "smb"
+      ],
+      "requires_credential": false
+    },
+    {
+      "source": "it-ws-01",
+      "target": "usr-ws-06",
+      "protocols": [
+        "rdp",
+        "ssh",
+        "smb"
+      ],
+      "requires_credential": false
+    },
+    {
+      "source": "it-ws-01",
+      "target": "usr-ws-07",
+      "protocols": [
+        "rdp",
+        "ssh",
+        "smb"
+      ],
+      "requires_credential": false
+    },
+    {
+      "source": "it-ws-01",
+      "target": "usr-ws-08",
+      "protocols": [
+        "rdp",
+        "ssh",
+        "smb"
+      ],
+      "requires_credential": false
+    },
+    {
+      "source": "it-ws-01",
+      "target": "srv-dc-01",
+      "protocols": [
+        "ldap",
+        "kerberos",
+        "rdp",
+        "smb"
+      ],
+      "requires_credential": false
+    },
+    {
+      "source": "it-ws-01",
+      "target": "srv-file-01",
+      "protocols": [
+        "rdp",
+        "ssh",
+        "smb"
+      ],
+      "requires_credential": false
+    },
+    {
+      "source": "it-ws-01",
+      "target": "srv-app-01",
+      "protocols": [
+        "rdp",
+        "ssh",
+        "smb"
+      ],
+      "requires_credential": false
+    },
+    {
+      "source": "it-ws-01",
+      "target": "srv-db-01",
+      "protocols": [
+        "rdp",
+        "ssh",
+        "smb"
+      ],
+      "requires_credential": false
+    },
+    {
+      "source": "it-ws-01",
+      "target": "srv-backup-01",
+      "protocols": [
+        "rdp",
+        "ssh",
+        "smb"
+      ],
+      "requires_credential": false
+    },
+    {
+      "source": "it-ws-01",
+      "target": "rst-exec-01",
+      "protocols": [
+        "rdp",
+        "ssh",
+        "smb"
+      ],
+      "requires_credential": false
+    },
+    {
+      "source": "it-ws-01",
+      "target": "rst-exec-02",
+      "protocols": [
+        "rdp",
+        "ssh",
+        "smb"
+      ],
+      "requires_credential": false
+    },
+    {
+      "source": "it-ws-01",
+      "target": "rst-hr-01",
+      "protocols": [
+        "rdp",
+        "ssh",
+        "smb"
+      ],
+      "requires_credential": false
+    },
+    {
+      "source": "it-ws-01",
+      "target": "dmz-web-01",
+      "protocols": [
+        "rdp",
+        "ssh",
+        "smb"
+      ],
+      "requires_credential": false
+    },
+    {
+      "source": "it-ws-01",
+      "target": "dmz-mail-01",
+      "protocols": [
+        "rdp",
+        "ssh",
+        "smb"
+      ],
+      "requires_credential": false
+    },
+    {
+      "source": "it-ws-01",
+      "target": "dmz-vpn-01",
+      "protocols": [
+        "rdp",
+        "ssh",
+        "smb"
+      ],
+      "requires_credential": false
+    },
+    {
+      "source": "it-ws-01",
+      "target": "it-ws-02",
+      "protocols": [
+        "rdp",
+        "ssh",
+        "smb"
+      ],
+      "requires_credential": false
+    },
+    {
+      "source": "it-ws-01",
+      "target": "it-ws-03",
+      "protocols": [
+        "rdp",
+        "ssh",
+        "smb"
+      ],
+      "requires_credential": false
+    },
+    {
+      "source": "it-ws-02",
+      "target": "usr-ws-01",
+      "protocols": [
+        "rdp",
+        "ssh",
+        "smb"
+      ],
+      "requires_credential": false
+    },
+    {
+      "source": "it-ws-02",
+      "target": "usr-ws-02",
+      "protocols": [
+        "rdp",
+        "ssh",
+        "smb"
+      ],
+      "requires_credential": false
+    },
+    {
+      "source": "it-ws-02",
+      "target": "usr-ws-03",
+      "protocols": [
+        "rdp",
+        "ssh",
+        "smb"
+      ],
+      "requires_credential": false
+    },
+    {
+      "source": "it-ws-02",
+      "target": "usr-ws-04",
+      "protocols": [
+        "rdp",
+        "ssh",
+        "smb"
+      ],
+      "requires_credential": false
+    },
+    {
+      "source": "it-ws-02",
+      "target": "usr-ws-05",
+      "protocols": [
+        "rdp",
+        "ssh",
+        "smb"
+      ],
+      "requires_credential": false
+    },
+    {
+      "source": "it-ws-02",
+      "target": "usr-ws-06",
+      "protocols": [
+        "rdp",
+        "ssh",
+        "smb"
+      ],
+      "requires_credential": false
+    },
+    {
+      "source": "it-ws-02",
+      "target": "usr-ws-07",
+      "protocols": [
+        "rdp",
+        "ssh",
+        "smb"
+      ],
+      "requires_credential": false
+    },
+    {
+      "source": "it-ws-02",
+      "target": "usr-ws-08",
+      "protocols": [
+        "rdp",
+        "ssh",
+        "smb"
+      ],
+      "requires_credential": false
+    },
+    {
+      "source": "it-ws-02",
+      "target": "srv-dc-01",
+      "protocols": [
+        "ldap",
+        "kerberos",
+        "rdp",
+        "smb"
+      ],
+      "requires_credential": false
+    },
+    {
+      "source": "it-ws-02",
+      "target": "srv-file-01",
+      "protocols": [
+        "rdp",
+        "ssh",
+        "smb"
+      ],
+      "requires_credential": false
+    },
+    {
+      "source": "it-ws-02",
+      "target": "srv-app-01",
+      "protocols": [
+        "rdp",
+        "ssh",
+        "smb"
+      ],
+      "requires_credential": false
+    },
+    {
+      "source": "it-ws-02",
+      "target": "srv-db-01",
+      "protocols": [
+        "rdp",
+        "ssh",
+        "smb"
+      ],
+      "requires_credential": false
+    },
+    {
+      "source": "it-ws-02",
+      "target": "srv-backup-01",
+      "protocols": [
+        "rdp",
+        "ssh",
+        "smb"
+      ],
+      "requires_credential": false
+    },
+    {
+      "source": "it-ws-02",
+      "target": "rst-exec-01",
+      "protocols": [
+        "rdp",
+        "ssh",
+        "smb"
+      ],
+      "requires_credential": false
+    },
+    {
+      "source": "it-ws-02",
+      "target": "rst-exec-02",
+      "protocols": [
+        "rdp",
+        "ssh",
+        "smb"
+      ],
+      "requires_credential": false
+    },
+    {
+      "source": "it-ws-02",
+      "target": "rst-hr-01",
+      "protocols": [
+        "rdp",
+        "ssh",
+        "smb"
+      ],
+      "requires_credential": false
+    },
+    {
+      "source": "it-ws-02",
+      "target": "dmz-web-01",
+      "protocols": [
+        "rdp",
+        "ssh",
+        "smb"
+      ],
+      "requires_credential": false
+    },
+    {
+      "source": "it-ws-02",
+      "target": "dmz-mail-01",
+      "protocols": [
+        "rdp",
+        "ssh",
+        "smb"
+      ],
+      "requires_credential": false
+    },
+    {
+      "source": "it-ws-02",
+      "target": "dmz-vpn-01",
+      "protocols": [
+        "rdp",
+        "ssh",
+        "smb"
+      ],
+      "requires_credential": false
+    },
+    {
+      "source": "it-ws-02",
+      "target": "it-ws-01",
+      "protocols": [
+        "rdp",
+        "ssh",
+        "smb"
+      ],
+      "requires_credential": false
+    },
+    {
+      "source": "it-ws-02",
+      "target": "it-ws-03",
+      "protocols": [
+        "rdp",
+        "ssh",
+        "smb"
+      ],
+      "requires_credential": false
+    },
+    {
+      "source": "it-ws-03",
+      "target": "usr-ws-01",
+      "protocols": [
+        "rdp",
+        "ssh",
+        "smb"
+      ],
+      "requires_credential": false
+    },
+    {
+      "source": "it-ws-03",
+      "target": "usr-ws-02",
+      "protocols": [
+        "rdp",
+        "ssh",
+        "smb"
+      ],
+      "requires_credential": false
+    },
+    {
+      "source": "it-ws-03",
+      "target": "usr-ws-03",
+      "protocols": [
+        "rdp",
+        "ssh",
+        "smb"
+      ],
+      "requires_credential": false
+    },
+    {
+      "source": "it-ws-03",
+      "target": "usr-ws-04",
+      "protocols": [
+        "rdp",
+        "ssh",
+        "smb"
+      ],
+      "requires_credential": false
+    },
+    {
+      "source": "it-ws-03",
+      "target": "usr-ws-05",
+      "protocols": [
+        "rdp",
+        "ssh",
+        "smb"
+      ],
+      "requires_credential": false
+    },
+    {
+      "source": "it-ws-03",
+      "target": "usr-ws-06",
+      "protocols": [
+        "rdp",
+        "ssh",
+        "smb"
+      ],
+      "requires_credential": false
+    },
+    {
+      "source": "it-ws-03",
+      "target": "usr-ws-07",
+      "protocols": [
+        "rdp",
+        "ssh",
+        "smb"
+      ],
+      "requires_credential": false
+    },
+    {
+      "source": "it-ws-03",
+      "target": "usr-ws-08",
+      "protocols": [
+        "rdp",
+        "ssh",
+        "smb"
+      ],
+      "requires_credential": false
+    },
+    {
+      "source": "it-ws-03",
+      "target": "srv-dc-01",
+      "protocols": [
+        "ldap",
+        "kerberos",
+        "rdp",
+        "smb"
+      ],
+      "requires_credential": false
+    },
+    {
+      "source": "it-ws-03",
+      "target": "srv-file-01",
+      "protocols": [
+        "rdp",
+        "ssh",
+        "smb"
+      ],
+      "requires_credential": false
+    },
+    {
+      "source": "it-ws-03",
+      "target": "srv-app-01",
+      "protocols": [
+        "rdp",
+        "ssh",
+        "smb"
+      ],
+      "requires_credential": false
+    },
+    {
+      "source": "it-ws-03",
+      "target": "srv-db-01",
+      "protocols": [
+        "rdp",
+        "ssh",
+        "smb"
+      ],
+      "requires_credential": false
+    },
+    {
+      "source": "it-ws-03",
+      "target": "srv-backup-01",
+      "protocols": [
+        "rdp",
+        "ssh",
+        "smb"
+      ],
+      "requires_credential": false
+    },
+    {
+      "source": "it-ws-03",
+      "target": "rst-exec-01",
+      "protocols": [
+        "rdp",
+        "ssh",
+        "smb"
+      ],
+      "requires_credential": false
+    },
+    {
+      "source": "it-ws-03",
+      "target": "rst-exec-02",
+      "protocols": [
+        "rdp",
+        "ssh",
+        "smb"
+      ],
+      "requires_credential": false
+    },
+    {
+      "source": "it-ws-03",
+      "target": "rst-hr-01",
+      "protocols": [
+        "rdp",
+        "ssh",
+        "smb"
+      ],
+      "requires_credential": false
+    },
+    {
+      "source": "it-ws-03",
+      "target": "dmz-web-01",
+      "protocols": [
+        "rdp",
+        "ssh",
+        "smb"
+      ],
+      "requires_credential": false
+    },
+    {
+      "source": "it-ws-03",
+      "target": "dmz-mail-01",
+      "protocols": [
+        "rdp",
+        "ssh",
+        "smb"
+      ],
+      "requires_credential": false
+    },
+    {
+      "source": "it-ws-03",
+      "target": "dmz-vpn-01",
+      "protocols": [
+        "rdp",
+        "ssh",
+        "smb"
+      ],
+      "requires_credential": false
+    },
+    {
+      "source": "it-ws-03",
+      "target": "it-ws-01",
+      "protocols": [
+        "rdp",
+        "ssh",
+        "smb"
+      ],
+      "requires_credential": false
+    },
+    {
+      "source": "it-ws-03",
+      "target": "it-ws-02",
+      "protocols": [
+        "rdp",
+        "ssh",
+        "smb"
+      ],
+      "requires_credential": false
+    },
+    {
+      "source": "srv-dc-01",
+      "target": "srv-file-01",
+      "protocols": [
+        "smb",
+        "rdp",
+        "ssh"
+      ],
+      "requires_credential": false
+    },
+    {
+      "source": "srv-dc-01",
+      "target": "srv-app-01",
+      "protocols": [
+        "smb",
+        "rdp",
+        "ssh"
+      ],
+      "requires_credential": false
+    },
+    {
+      "source": "srv-dc-01",
+      "target": "srv-db-01",
+      "protocols": [
+        "smb",
+        "rdp",
+        "ssh"
+      ],
+      "requires_credential": false
+    },
+    {
+      "source": "srv-dc-01",
+      "target": "srv-backup-01",
+      "protocols": [
+        "smb",
+        "rdp",
+        "ssh"
+      ],
+      "requires_credential": false
+    },
+    {
+      "source": "srv-file-01",
+      "target": "srv-dc-01",
+      "protocols": [
+        "smb",
+        "rdp",
+        "ssh"
+      ],
+      "requires_credential": false
+    },
+    {
+      "source": "srv-file-01",
+      "target": "srv-app-01",
+      "protocols": [
+        "smb",
+        "rdp",
+        "ssh"
+      ],
+      "requires_credential": false
+    },
+    {
+      "source": "srv-file-01",
+      "target": "srv-db-01",
+      "protocols": [
+        "smb",
+        "rdp",
+        "ssh"
+      ],
+      "requires_credential": false
+    },
+    {
+      "source": "srv-file-01",
+      "target": "srv-backup-01",
+      "protocols": [
+        "smb",
+        "rdp",
+        "ssh"
+      ],
+      "requires_credential": false
+    },
+    {
+      "source": "srv-app-01",
+      "target": "srv-dc-01",
+      "protocols": [
+        "smb",
+        "rdp",
+        "ssh"
+      ],
+      "requires_credential": false
+    },
+    {
+      "source": "srv-app-01",
+      "target": "srv-file-01",
+      "protocols": [
+        "smb",
+        "rdp",
+        "ssh"
+      ],
+      "requires_credential": false
+    },
+    {
+      "source": "srv-app-01",
+      "target": "srv-db-01",
+      "protocols": [
+        "smb",
+        "rdp",
+        "ssh"
+      ],
+      "requires_credential": false
+    },
+    {
+      "source": "srv-app-01",
+      "target": "srv-backup-01",
+      "protocols": [
+        "smb",
+        "rdp",
+        "ssh"
+      ],
+      "requires_credential": false
+    },
+    {
+      "source": "srv-db-01",
+      "target": "srv-dc-01",
+      "protocols": [
+        "smb",
+        "rdp",
+        "ssh"
+      ],
+      "requires_credential": false
+    },
+    {
+      "source": "srv-db-01",
+      "target": "srv-file-01",
+      "protocols": [
+        "smb",
+        "rdp",
+        "ssh"
+      ],
+      "requires_credential": false
+    },
+    {
+      "source": "srv-db-01",
+      "target": "srv-app-01",
+      "protocols": [
+        "smb",
+        "rdp",
+        "ssh"
+      ],
+      "requires_credential": false
+    },
+    {
+      "source": "srv-db-01",
+      "target": "srv-backup-01",
+      "protocols": [
+        "smb",
+        "rdp",
+        "ssh"
+      ],
+      "requires_credential": false
+    },
+    {
+      "source": "srv-backup-01",
+      "target": "srv-dc-01",
+      "protocols": [
+        "smb",
+        "rdp",
+        "ssh"
+      ],
+      "requires_credential": false
+    },
+    {
+      "source": "srv-backup-01",
+      "target": "srv-file-01",
+      "protocols": [
+        "smb",
+        "rdp",
+        "ssh"
+      ],
+      "requires_credential": false
+    },
+    {
+      "source": "srv-backup-01",
+      "target": "srv-app-01",
+      "protocols": [
+        "smb",
+        "rdp",
+        "ssh"
+      ],
+      "requires_credential": false
+    },
+    {
+      "source": "srv-backup-01",
+      "target": "srv-db-01",
+      "protocols": [
+        "smb",
+        "rdp",
+        "ssh"
+      ],
+      "requires_credential": false
+    },
+    {
+      "source": "rst-exec-01",
+      "target": "srv-dc-01",
+      "protocols": [
+        "ldap",
+        "kerberos"
+      ],
+      "requires_credential": false
+    },
+    {
+      "source": "rst-exec-01",
+      "target": "rst-exec-02",
+      "protocols": [
+        "smb"
+      ],
+      "requires_credential": false
+    },
+    {
+      "source": "rst-exec-01",
+      "target": "rst-hr-01",
+      "protocols": [
+        "smb"
+      ],
+      "requires_credential": false
+    },
+    {
+      "source": "rst-exec-02",
+      "target": "srv-dc-01",
+      "protocols": [
+        "ldap",
+        "kerberos"
+      ],
+      "requires_credential": false
+    },
+    {
+      "source": "rst-exec-02",
+      "target": "rst-exec-01",
+      "protocols": [
+        "smb"
+      ],
+      "requires_credential": false
+    },
+    {
+      "source": "rst-exec-02",
+      "target": "rst-hr-01",
+      "protocols": [
+        "smb"
+      ],
+      "requires_credential": false
+    },
+    {
+      "source": "rst-hr-01",
+      "target": "srv-dc-01",
+      "protocols": [
+        "ldap",
+        "kerberos"
+      ],
+      "requires_credential": false
+    },
+    {
+      "source": "rst-hr-01",
+      "target": "rst-exec-01",
+      "protocols": [
+        "smb"
+      ],
+      "requires_credential": false
+    },
+    {
+      "source": "rst-hr-01",
+      "target": "rst-exec-02",
+      "protocols": [
+        "smb"
+      ],
+      "requires_credential": false
+    },
+    {
+      "source": "external",
+      "target": "dmz-web-01",
+      "protocols": [
+        "http",
+        "https",
+        "smtp",
+        "vpn"
+      ],
+      "requires_credential": false
+    },
+    {
+      "source": "external",
+      "target": "dmz-mail-01",
+      "protocols": [
+        "http",
+        "https",
+        "smtp",
+        "vpn"
+      ],
+      "requires_credential": false
+    },
+    {
+      "source": "external",
+      "target": "dmz-vpn-01",
+      "protocols": [
+        "http",
+        "https",
+        "smtp",
+        "vpn"
+      ],
+      "requires_credential": false
+    }
+  ],
+  "credentials": [
+    {
+      "id": "cred-domain-admin",
+      "username": "da-admin",
+      "privilege": "admin",
+      "valid_on": [
+        "srv-dc-01",
+        "srv-file-01",
+        "srv-app-01",
+        "srv-db-01",
+        "srv-backup-01",
+        "it-ws-01",
+        "it-ws-02",
+        "it-ws-03",
+        "usr-ws-01",
+        "usr-ws-02",
+        "usr-ws-03",
+        "usr-ws-04",
+        "usr-ws-05",
+        "usr-ws-06",
+        "usr-ws-07",
+        "usr-ws-08",
+        "rst-exec-01",
+        "rst-exec-02",
+        "rst-hr-01"
+      ],
+      "compromised": false
+    },
+    {
+      "id": "cred-local-admin-srv-file-01",
+      "username": "local-admin-srv-file-01",
+      "privilege": "admin",
+      "valid_on": [
+        "srv-file-01"
+      ],
+      "compromised": false
+    },
+    {
+      "id": "cred-local-admin-srv-app-01",
+      "username": "local-admin-srv-app-01",
+      "privilege": "admin",
+      "valid_on": [
+        "srv-app-01"
+      ],
+      "compromised": false
+    },
+    {
+      "id": "cred-local-admin-srv-db-01",
+      "username": "local-admin-srv-db-01",
+      "privilege": "admin",
+      "valid_on": [
+        "srv-db-01"
+      ],
+      "compromised": false
+    },
+    {
+      "id": "cred-local-admin-srv-backup-01",
+      "username": "local-admin-srv-backup-01",
+      "privilege": "admin",
+      "valid_on": [
+        "srv-backup-01"
+      ],
+      "compromised": false
+    },
+    {
+      "id": "cred-svc-app-db",
+      "username": "svc-app",
+      "privilege": "user",
+      "valid_on": [
+        "srv-app-01",
+        "srv-db-01"
+      ],
+      "compromised": false
+    },
+    {
+      "id": "cred-user-01",
+      "username": "user01",
+      "privilege": "user",
+      "valid_on": [
+        "usr-ws-01"
+      ],
+      "compromised": false
+    },
+    {
+      "id": "cred-user-02",
+      "username": "user02",
+      "privilege": "user",
+      "valid_on": [
+        "usr-ws-02"
+      ],
+      "compromised": false
+    },
+    {
+      "id": "cred-user-03",
+      "username": "user03",
+      "privilege": "user",
+      "valid_on": [
+        "usr-ws-03"
+      ],
+      "compromised": false
+    },
+    {
+      "id": "cred-user-04",
+      "username": "user04",
+      "privilege": "user",
+      "valid_on": [
+        "usr-ws-04"
+      ],
+      "compromised": false
+    },
+    {
+      "id": "cred-user-05",
+      "username": "user05",
+      "privilege": "user",
+      "valid_on": [
+        "usr-ws-05"
+      ],
+      "compromised": false
+    },
+    {
+      "id": "cred-user-06",
+      "username": "user06",
+      "privilege": "user",
+      "valid_on": [
+        "usr-ws-06"
+      ],
+      "compromised": false
+    },
+    {
+      "id": "cred-user-07",
+      "username": "user07",
+      "privilege": "user",
+      "valid_on": [
+        "usr-ws-07"
+      ],
+      "compromised": false
+    },
+    {
+      "id": "cred-user-08",
+      "username": "user08",
+      "privilege": "user",
+      "valid_on": [
+        "usr-ws-08"
+      ],
+      "compromised": false
+    },
+    {
+      "id": "cred-it-admin-01",
+      "username": "itadmin01",
+      "privilege": "admin",
+      "valid_on": [
+        "it-ws-01",
+        "srv-dc-01",
+        "srv-file-01",
+        "srv-app-01",
+        "srv-db-01",
+        "srv-backup-01"
+      ],
+      "compromised": false
+    },
+    {
+      "id": "cred-it-admin-02",
+      "username": "itadmin02",
+      "privilege": "admin",
+      "valid_on": [
+        "it-ws-02",
+        "srv-dc-01",
+        "srv-file-01",
+        "srv-app-01",
+        "srv-db-01",
+        "srv-backup-01"
+      ],
+      "compromised": false
+    },
+    {
+      "id": "cred-it-admin-03",
+      "username": "itadmin03",
+      "privilege": "admin",
+      "valid_on": [
+        "it-ws-03",
+        "srv-dc-01",
+        "srv-file-01",
+        "srv-app-01",
+        "srv-db-01",
+        "srv-backup-01"
+      ],
+      "compromised": false
+    },
+    {
+      "id": "cred-hr-admin",
+      "username": "hr-admin",
+      "privilege": "admin",
+      "valid_on": [
+        "rst-hr-01",
+        "rst-exec-01",
+        "rst-exec-02"
+      ],
+      "compromised": false
+    }
+  ],
+  "segments": {
+    "dmz": [
+      "dmz-web-01",
+      "dmz-mail-01",
+      "dmz-vpn-01"
+    ],
+    "user": [
+      "usr-ws-01",
+      "usr-ws-02",
+      "usr-ws-03",
+      "usr-ws-04",
+      "usr-ws-05",
+      "usr-ws-06",
+      "usr-ws-07",
+      "usr-ws-08"
+    ],
+    "it": [
+      "it-ws-01",
+      "it-ws-02",
+      "it-ws-03"
+    ],
+    "server": [
+      "srv-dc-01",
+      "srv-file-01",
+      "srv-app-01",
+      "srv-db-01",
+      "srv-backup-01"
+    ],
+    "restricted": [
+      "rst-exec-01",
+      "rst-exec-02",
+      "rst-hr-01"
+    ],
+    "external": [
+      "external"
+    ]
+  }
+}
